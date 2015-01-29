@@ -117,6 +117,8 @@ Enrichissez cette base à votre guise! Vous pouvez par exemple charger le chapit
 
 [ProgressDialog][12]
 
+YoseTheGame
+
 [0]: http://developer.android.com/guide/appendix/media-formats.html "Media Formats"
 [1]: http://developer.android.com/reference/android/widget/VideoView.html "VideoView"
 [2]: http://developer.android.com/reference/android/widget/MediaController.html "MediaController"
