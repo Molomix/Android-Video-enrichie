@@ -11,6 +11,7 @@ L'objectif du TP est de réaliser une application Android illustrant les concept
 
 * Android Studio 1.x
 * SDK à jour
+* Git d'installé
 
 ***
 
