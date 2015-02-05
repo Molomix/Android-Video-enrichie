@@ -1,5 +1,7 @@
 # IMR3 - Rich Media #
 
+![logo_enssat-android.png](https://bitbucket.org/repo/xj7deK/images/2190932522-logo_enssat-android.png)
+
 Dépôt Git du support de TP Android du module RichMedia à l'intention des élèves en IM3 à l'Enssat.
 
 L'objectif du TP est de réaliser une application Android illustrant les concepts Rich Media présenté en cours.
