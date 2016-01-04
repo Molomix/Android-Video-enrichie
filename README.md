@@ -114,6 +114,10 @@ Pour consulter une solution et passer à l'étape suivante basculez sur la branc
 Vous avez maintenant une application qui lit une vidéo, affiche des informations complémentaires synchronisées avec le film et propose un chapitrage que l'utilisateur peut parcourir.
 Enrichissez cette base à votre guise! Vous pouvez par exemple charger le chapitrage et les metas-données de façon asynchrone, afficher une boite de progression en attendant que la vidéo soit chargée,...
 
+Pour pouvoir évaluer votre travail, forkez ce repo, codez puis une fois votre travail terminé soumettez une pull request. La procédure est décrite [ici][13].
+
+**May the fork be with you!**
+
 ##### Indices #####
 
 [AsyncTask][11]
@@ -133,3 +137,4 @@ Enrichissez cette base à votre guise! Vous pouvez par exemple charger le chapit
 [10]: http://developer.android.com/reference/android/view/View.OnClickListener.html "View.OnClickListener"
 [11]: http://developer.android.com/reference/android/os/AsyncTask.html "AsyncTask"
 [12]: http://developer.android.com/reference/android/app/ProgressDialog.html "ProgressDialog"
+[13]: https://www.atlassian.com/git/tutorials/making-a-pull-request/how-it-works "Fork"
