@@ -1,6 +1,5 @@
 # IMR3 - Interfaces Riches #
 
-![logo_enssat-android.png](https://bitbucket.org/repo/xj7deK/images/2190932522-logo_enssat-android.png)
 
 Dépôt Git du support de TP Android du module Interfaces Riches à l'intention des élèves en IM3 à l'Enssat.
 
