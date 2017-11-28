@@ -23,7 +23,7 @@ Récupérez le code du projet sur votre machine de travail. Deux méthodes sont 
 
 * Clonez le repo sur votre machine en tapant la commande suivante dans un terminal.
 
-`$> git clone https://bitbucket.org/marc_poppleton/imr3_richmedia.git`
+`$> git clone https://bitbucket.org/marc_poppleton/imr3_android.git`
 
 Ensuite dans Android Studio importez le projet et choissisez les valeurs par défaut.
 
