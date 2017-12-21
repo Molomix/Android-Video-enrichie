@@ -6,4 +6,22 @@
           android:title="@string/action_settings"
           android:orderInCategory="100"
           app:showAsAction="never"/>
+    <item android:id="@+id/action_chapters"
+        android:title="@string/item_chapters"
+        app:showAsAction="never">
+      <menu>
+          <item
+              android:id="@+id/chapter_bgb"
+              android:title="@string/big_buck_bunny"/>
+          <item
+              android:id="@+id/chapter_title"
+              android:title="@string/title"/>
+          <item
+              android:id="@+id/chapter_butterfly"
+              android:title="@string/butterfly"/>
+          <item
+              android:id="@+id/chapter_credits"
+              android:title="@string/credits"/>
+      </menu>
+    </item>
 </menu>

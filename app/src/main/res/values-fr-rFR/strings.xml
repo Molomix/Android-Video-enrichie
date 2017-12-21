@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vidéo enrichie</string>
+    <string name="hello_world">Salut le monde !</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="title">Titre</string>
+    <string name="butterfly">Papillon</string>
+    <string name="credits">Crédits</string>
+    <string name="title_activity_settings">Paramètres</string>
+    <string name="pref_header_general">Général</string>
+    <string name="pref_title_social_recommendations">Autoriser recommandations sociales</string>
+    <string name="pref_description_social_recommendations">Recommandations pour les gents pour contacter</string>
+    <string name="pref_title_display_name">Afficher le nom</string>
+    <string name="pref_title_add_friends_to_messages">Ajouter amis aux messages</string>
+    <string name="pref_header_data_sync">Données &amp; synchronisation</string>
+    <string name="pref_title_sync_frequency">Fréquence d\'espionnage</string>
+    <string name="pref_title_system_sync_settings">Paramètres de synchronisation système</string>
+    <string name="pref_header_notifications">Notifications</string>
+    <string name="pref_title_new_message_notifications">Nouvel message notification</string>
+    <string name="pref_title_ringtone">Sonnerie</string>
+    <string name="pref_ringtone_silent">Silencieux</string>
+    <string name="pref_title_vibrate">Vibreur</string>
+    <string name="pref_title_save_time">Sauvegarde dernière position vidéo</string>
+    <string name="pref_summary_save_time">Sauvegarder la position courante de la vidéo lors de l\'arrêt de l\'application</string>
+    <string name="item_chapters">Chapitres</string>
+</resources>

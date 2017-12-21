@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/chapter_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignRight="@id/web"
+    android:layout_below="@id/video">
+    <Button
+        android:id="@+id/button_start"
+        android:text="BEGINNING"
+        android:tag="chapter"
+        android:contentDescription="0:00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_intro"
+        android:text="INTRO"
+        android:tag="chapter"
+        android:contentDescription="0:20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_title"
+        android:text="TITLE"
+        android:tag="chapter"
+        android:contentDescription="0:25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_butterfly"
+        android:text="@string/butterfly"
+        android:tag="chapter"
+        android:contentDescription="1:15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
