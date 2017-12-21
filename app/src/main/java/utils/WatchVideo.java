@@ -1,8 +1,6 @@
 package utils;
 
-import android.util.Log;
 import android.webkit.WebView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.richmedia.imr3.enssat.com.enrichedvideo.MainActivity;
@@ -12,9 +10,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import utils.Utils;
-
 /**
+ * @author Pierre-Alexis BULOT
+ * @author Morgan D'HAESE
  * Created by morgan on 08/12/17.
  * Cette classe va surveiller le temps courant de la vidéo.
  */
@@ -37,7 +35,7 @@ public class WatchVideo extends Thread {
      * Constructeur prenant en compte l'activité, la vidéo à surveiller, la vue à raffraichir.
      * @param activity L'activité où se trouve la vidéo et la web view
      * @param video La vidéo à surveiller
-     * @param webView La web vue, à corriger
+     * @param webView La web vue à raffraichir
      */
     public WatchVideo(MainActivity activity, VideoView video, WebView webView){
         this.mainAct = activity;
@@ -74,7 +72,7 @@ public class WatchVideo extends Thread {
      * Méthode pour mettre le thread en 'pause'.
      * C'est à dire qu'il sera actif, mais qu'il ne fera pas son traitement.
      * Il est en attente.
-     * @param pause
+     * @param pause True pour arrêter le traitement du thread, non pas son éxecution. False pour qu'il réalise son traitement
      */
     public void pause(boolean pause){
         this.pause = pause;
@@ -88,15 +86,8 @@ public class WatchVideo extends Thread {
         Map<String,String> times = Utils.getTimes(this.mainAct);
 
         Set<String> keys = urls.keySet();
-        for (String key: times.keySet())
-        {
-            if(!keys.contains(key))
-                keys.add(key);
-        }
 
-        Log.v("KEYS",keys.toString());
-
-        // Tri directement
+        // La map sera directement trié
         mapTimeURL = new TreeMap<>();
 
         for (String key:keys)
@@ -110,30 +101,31 @@ public class WatchVideo extends Thread {
         }
     }
 
+    /**
+     * Méthode de traitement du thread surchargée
+     */
     @Override
     public void run() {
         super.run();
 
         int duration,time;
 
-        Log.v("WatchVideo","Starting thread");
+        // Le thread va s'éxecuter tant que ne l'arrête pas
         while(!stop)
         {
+            Utils.pause(frequency);
+
             duration = video.getDuration();
 
             if(!pause)
             {
                 time = video.getCurrentPosition();
-                // Attendre que la vidéo soit lancée pour la surveiller
-                if(!video.isPlaying()) {
-                    Utils.pause(frequency);
-                } else if(time < duration){
-                    //Log.v("currentDuration",Integer.toString(time));
 
-                    Utils.pause(frequency);
-
+                if(time < duration){
                     mainAct.setCurrentTime(time);
 
+                    // Nous devons être sur le thread principal afin de pouvoir intéragir avec
+                    // plusieurs vues de l'activité
                     mainAct.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -144,6 +136,7 @@ public class WatchVideo extends Thread {
 
                             boolean found = false;
 
+                            // On recherche le bon URL en fonction de la position courante de la vidéo
                             while(!found){
                                 timeCodeURL = nextTimeCodeURL;
                                 if(itr.hasNext()){
@@ -157,15 +150,11 @@ public class WatchVideo extends Thread {
                                 }
                             }
 
-                            //Log.v("TimeCodeURL",""+timeCodeURL);
-
+                            // Récupération de l'URL en fonction du temps
                             String url = mapTimeURL.get(timeCodeURL);
 
-                            //Log.v("URL","URL TIME CODE "+url);
-
+                            // Si l'url n'est pas 'null' et que ce n'est pas celle courante, on recharge
                             if(url != null && !webView.getUrl().contains(url)) {
-                                //Log.v("ChangeURL","Loading "+url);
-                                //Toast.makeText(mainAct,"Loading "+url,Toast.LENGTH_SHORT).show();
                                 webView.loadUrl(url);
                             }
                         }
@@ -173,11 +162,12 @@ public class WatchVideo extends Thread {
                 }
             }
         }
-        Log.v("Video","Videoover");
     }
 
+    /**
+     * Méthode pour mettre à jour la fréquence de surveillance de la vidéo
+     */
     public void updateFrequency() {
         this.frequency = Utils.getFrequencyWatch(mainAct.getApplicationContext());
-        Log.v("Frequency",this.frequency.toString());
     }
 }

@@ -16,6 +16,13 @@
     <string name="butterfly">Butterfly</string>
     <string name="credits">Credits</string>
 
+    <!-- CLES DES NOMS DE CHAPITRES -->
+    <!-- Les clés doivent en accord avec les valeurs situées dans les fichiers 'urls.xml' et 'times.url' -->
+    <string name="key_big_buck_bunny" translatable="false">Big_buck_bunny</string>
+    <string name="key_title" translatable="false">Title</string>
+    <string name="key_butterfly" translatable="false">Butterfly</string>
+    <string name="key_credits" translatable="false">Credits</string>
+
     <string name="title_activity_settings">Settings</string>
     <!-- URL DE LA VIDEO À TÉLÉCHARGER -->
     <string name="video_url" translatable="false">http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4</string>
